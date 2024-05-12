@@ -5,7 +5,12 @@ import os
 import pandas as pd
 from streamlit import session_state
 import subprocess
-from joblib import load
+try:
+    from joblib import load
+except ImportError:
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "joblib"])
+    from joblib import load
 
 def home_page():
     current_dir = Path(__file__).parent
