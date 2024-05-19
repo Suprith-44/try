@@ -5,7 +5,6 @@ import os
 import pandas as pd
 from streamlit import session_state
 import subprocess
-from joblib import load
 
 def home_page():
     current_dir = Path(__file__).parent
